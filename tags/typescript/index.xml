@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typescript on Andrew Jakubowicz</title>
+    <link>https://andrewjakubowicz.me/tags/typescript.html</link>
+    <description>Recent content in Typescript on Andrew Jakubowicz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Feb 2017 17:20:27 +1100</lastBuildDate>
+    
+	<atom:link href="https://andrewjakubowicz.me/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postmortem - Ts-depDraw: Dependency explorer</title>
+      <link>https://andrewjakubowicz.me/post/postmortem-tsdepdraw.html</link>
+      <pubDate>Fri, 24 Feb 2017 17:20:27 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/postmortem-tsdepdraw.html</guid>
+      <description>Why is visualising dependencies and projects interesting?
+Imagine you&amp;rsquo;re performing a code review, and you are able to quickly determine how that new piece of code interacts with the project. The graph automatically adds all the edges between nodes, and no hidden dependencies surprise you down the line. This subgraph is then shared with the concerns highlighted to be resolved.
+ We&amp;rsquo;re moving into a world where we expect more from our code.</description>
+    </item>
+    
+  </channel>
+</rss>

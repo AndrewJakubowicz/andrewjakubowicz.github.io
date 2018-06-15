@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>N-Queens Problem Backtracking Demo</title>
+
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/main-23344ecd.css" />
+    
+    
+    
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-73893959-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    
+</head>
+
+<nav class="fixed-nav-bar">
+<ul>
+    <li><a href="/">Home</a></li>
+    <li class="wide"></li>
+    <li><a href="/about/about.html">About</a></li>
+    <li><a href="/contact/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+
+<body>
+<div id="cover-container">
+    <div id="front-cover">
+        <h1>Post</h1>
+    </div>
+</div>
+
+    <section class="section-content">
+    <h1>N-Queens Problem Backtracking Demo</h1>
+    
+
+    
+
+<p>A visualization and explanation of how a backtracking algorithm searches for a solution to a problem.</p>
+
+<p><div style="display:block; width:400px; height: 400px; margin:20px auto;" id="canvas-nqueens">
+  <canvas id="nQueens-canvas"></canvas>
+</div>
+<label for="nQueens-n">Number of Queens:</label>
+<input id="nQueens-n" type="number">
+<button id="btn-submit">Play Animation</button></p>
+
+<p><strong>For performance reasons n is bound between 4 and 10.</strong></p>
+
+<p><em>Note: Requires canvas supported browser. Tested on Chrome, Safari, Edge, Firefox.</em></p>
+
+<h1 id="n-queens-problem">N-queens problem</h1>
+
+<p>If I have a chessboard of width and length <strong>n</strong> where <strong>n</strong> is a number.</p>
+
+<p>How can <strong>n</strong> queens be placed so that none of the queens are attacking one another?</p>
+
+<p><a href="http://www.hbmeyer.de/backtrack/achtdamen/eight.htm">Try it yourself here with 8 queens.</a></p>
+
+<h2 id="what-would-the-algorithm-do-without-backtracking">What would the algorithm do without backtracking?</h2>
+
+<p>Without backtracking a program would place all n queens before checking if any queens are attacking.
+This leads to wasteful solutions such as an entire row of queens.</p>
+
+<p>We don&rsquo;t need a whole row full of queens before we know that the solution failed.
+Instead we only need 2 queens to be attacking each other to know that the solution is wrong.</p>
+
+<h2 id="introducing-backtracking">Introducing backtracking</h2>
+
+<p>A backtracking algorithm is a way of computing a solution to a problem when constraints are known.</p>
+
+<p>The algorithm places one queen at a time.
+If the queen placed is attacking another queen, the queen is removed and we try again in the next position.
+This is the <em>backtracking</em> step.</p>
+
+<p>If you want to see this in action. Run the animation and look for the queens being taken off the board.
+This is obvious when solving for 10 queens.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Backtracking">For more detail check out the wiki page on backtracking.</a></p>
+
+
+    
+        <script src="/js/nQueens.js-bundle-e40eeedcfc22c145c450.js"></script>
+    
+
+    </section>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+<script src="/js/polyfill.js-bundle-e40eeedcfc22c145c450.js"></script>
+<script src="/js/cover.ts-bundle-e40eeedcfc22c145c450.js"></script>
+<footer id="site-footer">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img style="float:right;" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</footer>
+</body>
+</html>

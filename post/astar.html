@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A* algorithm</title>
+
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/main-23344ecd.css" />
+    
+    
+    
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-73893959-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    
+</head>
+
+<nav class="fixed-nav-bar">
+<ul>
+    <li><a href="/">Home</a></li>
+    <li class="wide"></li>
+    <li><a href="/about/about.html">About</a></li>
+    <li><a href="/contact/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+
+<body>
+<div id="cover-container">
+    <div id="front-cover">
+        <h1>Post</h1>
+    </div>
+</div>
+
+    <section class="section-content">
+    <h1>A* algorithm</h1>
+    
+
+    
+
+<p><div id="demo"></div>
+<button id="run-demo">Run A*</button></p>
+
+<h2 id="instructions">Instructions</h2>
+
+<p>Click and drag on everything!</p>
+
+<p>Click on a wall to destroy it (and drag around to destroy multiple walls).
+Clicking on an empty space allows you to rebuild walls (again dragging builds lots of walls)!</p>
+
+<p>The <em>start</em> and <em>end</em> can be dragged around as well!</p>
+
+<h2 id="what-is-the-a-star-algorithm">What is the A star algorithm?</h2>
+
+<p>The A* algorithm is a path finding algorithm that finds the shortest path from
+some position to some goal.
+In this case the start is the green square, and the end is the pink square.</p>
+
+<p>In the demonstration above the algorithm only explores the squares that get coloured in.
+These explored squares come in two different types.
+Frontier squares (pink) and closed list squares (blue).</p>
+
+<p>In simple terms, the pink squares are ones that the algorithm may explore in the future,
+while the blue squares are ones that have been fully explored and won&rsquo;t be returned too.</p>
+
+<h2 id="a-as-a-metaphor">A* as a metaphor</h2>
+
+<p>Every day you take public transport to work, and need to walk the last little bit to work.
+You do this every day (you work really hard) and want to figure out the shortest path.</p>
+
+<p>One day you&rsquo;re sick of approximations, and decide to figure out the shortest path once and for all.
+You open google maps, grab a bunch of sticky notes, and uncap your permanent marker.</p>
+
+<p>You will use google maps to get a distance from your position to the end.
+(Conveniently, Google maps uses <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">Manhattan distance</a>)</p>
+
+<p>You&rsquo;ve also come up with a brilliant way of knowing if your path is the shortest.</p>
+
+<p>On your sticky note you&rsquo;ll write 3 numbers.</p>
+
+<ul>
+<li>A number representing how far you&rsquo;ve walked so far, let&rsquo;s call it <code>g</code>.</li>
+<li>Another number showing how far Google Maps says you are from the end, calling this one <code>h</code>.</li>
+<li>A big number in the middle, which is the <strong>addition</strong> of the two number&hellip; called <code>f</code>.</li>
+</ul>
+
+<p>Starting at the train station, you stick a note on the ground with the following values:</p>
+
+<p>Imagine you stand at  starting point holding a magic compass.
+This compass tells you what direction your goal is as well as how far your goal is from you.</p>
+
+<p>You are also really obsessed about getting the absolute shortest path to that goal.
+Luckily you&rsquo;re carrying a bunch of flags and a permanent marker.</p>
+
+<p>You are a genius and have developed a system that will ensure you the shortest path.</p>
+
+<h2 id="making-of-a">Making of A*</h2>
+
+<p>Currently I&rsquo;m enjoying the <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/">MIT OpenCourseware Artificial Intelligence course</a>
+and have found the concepts presented clear.
+But making it definitely presented challenges.
+Here are a couple questions I had to answer and work out while creating the A star demo above.</p>
+
+<p>What would you choose?</p>
+
+<ul>
+<li>How to represent the grid?
+
+<ul>
+<li>2D array</li>
+<li>linked list</li>
+<li>tree / graph structure</li>
+</ul></li>
+<li>How to store the closed nodes (fully explored nodes) vs the fringe nodes (nodes we want to explore soon)?
+
+<ul>
+<li>plain old array</li>
+<li>hash map</li>
+<li>linked list</li>
+<li>priority queue</li>
+</ul></li>
+<li>How to represent walls?</li>
+<li>What&rsquo;s an admissable enough heuristic?
+
+<ul>
+<li>Euclidean distance</li>
+<li>Manhattan distance</li>
+</ul></li>
+</ul>
+
+<h2 id="mistakes">Mistakes</h2>
+
+<p>Initially I tried to generate a 2d array of the game board, each node storing the parent node as well as the f, g, and h weights.
+This was a failure because mutating the game board didn&rsquo;t allow me to update fringe nodes with potentially
+better paths.</p>
+
+<p>It ended up being far easier to just create a linked list of nodes that referenced their parent.
+Once the path was found, I could recursively trace the path back to the root.</p>
+
+<p>This allowed me to store the walls in a dictionary or Map.
+The algorithm could check the Map to discover if a path was blocked, and simply not offer those nodes.</p>
+
+<p>My heuristic was initially used euclidean distance, which was inadmissable due to a strict 4 directions of movement.
+Manhattan distance (|delta x| + |delta y|), solved the problem.</p>
+
+<p>I stored the closed list in a Map, allowing me to quickly query for nodes.
+The open list always needed the most promising node to be at the top.
+An initial problem was that the min-heap would stop bubbling up if the weight was ==.
+This lead to a problem where if there were multiple nodes with the same weight,
+the node just placed would not be chosen.
+Often it is useful that the most recent node bubbled to the top, thus the
+min heap was changed to reflect this.</p>
+
+<blockquote>
+<p>Feedback welcome at my twitters: <a href="https://twitter.com/spyr1014">@spyr1014</a></p>
+</blockquote>
+
+
+    
+        <script src="/js/a-star.ts-bundle-e40eeedcfc22c145c450.js"></script>
+    
+
+    </section>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+<script src="/js/polyfill.js-bundle-e40eeedcfc22c145c450.js"></script>
+<script src="/js/cover.ts-bundle-e40eeedcfc22c145c450.js"></script>
+<footer id="site-footer">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img style="float:right;" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</footer>
+</body>
+</html>

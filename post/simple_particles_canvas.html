@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intro to Canvas with Particles</title>
+
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/main-23344ecd.css" />
+    
+    
+    
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-73893959-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    
+</head>
+
+<nav class="fixed-nav-bar">
+<ul>
+    <li><a href="/">Home</a></li>
+    <li class="wide"></li>
+    <li><a href="/about/about.html">About</a></li>
+    <li><a href="/contact/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+
+<body>
+<div id="cover-container">
+    <div id="front-cover">
+        <h1>Post</h1>
+    </div>
+</div>
+
+    <section class="section-content">
+    <h1>Intro to Canvas with Particles</h1>
+    
+
+    
+
+<p>This is what we’ll be making!</p>
+
+<div id="display1"></div>
+
+<p>If you can’t see anything then your device doesn’t support canvas.
+You can still follow along, but it’ll be more fun if you can see your work.</p>
+
+<p>Canvas is a super fun way to create animations on the browser!
+It’s also very easy to get started.</p>
+
+<p>To make it even easier to start, use <a href="http://codepen.io/">CodePen</a> to write your code.
+I’ll be sharing CodePen examples along the way.</p>
+
+<p>Finally I’m writing this to get you started with canvas very quickly.
+There are many ways to optimise the code below, but I’ve used this
+technique to make an entire snake game, so it’ll suffice.</p>
+
+<h2 id="html">HTML</h2>
+
+<p>Add the following html to the page.</p>
+
+<pre><code class="language-html">&lt;canvas id=&quot;myCanvas&quot; width=&quot;500px&quot; height=&quot;300px&quot;&gt;&lt;/canvas&gt;
+</code></pre>
+
+<h2 id="javascript">JavaScript</h2>
+
+<p>That HTML sure was hard.</p>
+
+<p>Let’s get something drawn on the canvas:</p>
+
+<pre><code class="language-javascript">var canvas = document.getElementById(&quot;myCanvas&quot;);
+
+var ctx = canvas.getContext('2d');
+
+ctx.fillStyle = &quot;purple&quot;;
+ctx.fillRect(10, 40, 10, 25);
+</code></pre>
+
+<p>You’ve successfully drawn on the canvas.</p>
+
+<p><p data-height="193" data-theme-id="0" data-slug-hash="GWJMYO" data-default-tab="js,result" data-user="Spyr1014" data-embed-version="2" data-pen-title="GWJMYO" class="codepen">See the Pen <a href="http://codepen.io/Spyr1014/pen/GWJMYO/">GWJMYO</a> by Andrew Jakubowicz (<a href="http://codepen.io/Spyr1014">@Spyr1014</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<p>Let’s see what we did.</p>
+
+<p>On the first line we get a reference to the canvas in the html.
+Before using a canvas, we must choose how to use it.
+In this case we’ll choose to use the canvas with a <code>'2d'</code> context.
+There are <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLCanvasElement/getContext">other contexts</a> as well, but the <code>'2d'</code> context is perfect for 2d renderings.</p>
+
+<p>Once we get a context, we can use that context’s methods to draw on the canvas.
+Here we pick a color, and then draw a rectangle with that color.</p>
+
+<p>The canvas is like instructing a painter.
+If we tell a painter to dip their brush in pink paint,
+it shouldn’t be surprising when everything is drawn is pink.</p>
+
+<p><p data-height="265" data-theme-id="0" data-slug-hash="bqdoPQ" data-default-tab="js,result" data-user="Spyr1014" data-embed-version="2" data-pen-title="bqdoPQ" class="codepen">See the Pen <a href="http://codepen.io/Spyr1014/pen/bqdoPQ/">bqdoPQ</a> by Andrew Jakubowicz (<a href="http://codepen.io/Spyr1014">@Spyr1014</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<p>Furthering this analogy, for an animation
+the painter must draw the new position of the object every frame.</p>
+
+<p>To create new frames we use a function called <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"><code>requestAnimationFrame()</code></a>.</p>
+
+<p><code>requestAnimationFrame()</code> takes a function that it will call on the next frame.
+To create an animation, we’ll create our own function called <code>update()</code> and then
+we’ll call it over and over again every frame.
+The <code>update()</code> function we write will update the square.</p>
+
+<p>Let’s create a square that falls down the screen and resets
+back to it’s starting position when it hits the ground.</p>
+
+<pre><code class="language-javascript">var canvas = document.getElementById(&quot;myCanvas&quot;),
+    ctx = canvas.getContext('2d');
+
+ctx.fillStyle = &quot;pink&quot;;
+
+var squarePosition = 0;
+var maxFallDistance = 50;
+
+function update(){
+  // Uncomment below and see what happens.
+  // ctx.clearRect(0, 0, 500, 300);
+  
+  requestAnimationFrame(update);
+  ctx.fillRect(20, squarePosition, 10, 10);
+  
+  // Now we will move the position.
+  squarePosition = squarePosition + 0.1;
+  
+  // Move squarePosition back to initial
+  // position when fallHeight reached
+  if (squarePosition &gt; maxFallDistance) {
+    squarePosition = 0
+  }
+}
+
+update();
+</code></pre>
+
+<p><p data-height="124" data-theme-id="0" data-slug-hash="OpVOJo" data-default-tab="result" data-user="Spyr1014" data-embed-version="2" data-pen-title="OpVOJo" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/Spyr1014/pen/OpVOJo/">OpVOJo</a> by Andrew Jakubowicz (<a href="http://codepen.io/Spyr1014">@Spyr1014</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<p>Notice that it’s not a falling square, but an elongating line!
+On the first line of the update function I’ve commented out <code>ctx.clearRect(0, 0, 500, 300);</code>.
+What do you notice when you uncomment this?</p>
+
+<p>Before uncommenting this line, the painter paints the square some distance lower on the canvas.
+This painter never paints over the canvas clearing it of past squares.
+With the command <code>ctx.clearRect(0, 0, 500, 300);</code>, the painter starts off each frame by
+painting over the entire canvas.
+Try changing the <code>clearRect</code> to <code>fillRect</code> and change the <code>fillStyle</code>.
+This is how you add a background.
+By default the canvas is transparent, and using <code>clearRect</code> paints the canvas transparently.
+This is fantastic if you want to overlay your canvas on top of other html elements on the page.</p>
+
+<p>Now that we can move a single square, we can add more squares.
+An easy method I use is to allow each particle to maintain it’s own state,
+and store any particles in an array.</p>
+
+<p>Then we can <code>forEach</code> over each element in the array calling <code>update()</code> on each of them,
+followed by a <code>draw()</code> function.</p>
+
+<p>Finally we want to destroy particles eventually! Because we store our particles in an
+array, we can <code>filter</code> over the array using the <code>isAlive()</code> method.
+Filter will filter out anything that isn’t <em>alive</em>.</p>
+
+<p>Below is a full example with a very simple particle, followed by a demo:</p>
+
+<pre><code class="language-javascript">var canvas = document.getElementById(&quot;myCanvas&quot;),
+    ctx = canvas.getContext('2d');
+
+ctx.fillStyle = &quot;pink&quot;;
+
+// Constructor for a single particle
+function Particle(x, y, heightOfCanvas){
+    this.x = x;
+    this.y = y;
+    this.speed = 1;
+    this.heightOfCanvas = heightOfCanvas;
+
+    this.update = function(){
+        this.y += this.speed;
+    }
+    this.draw = function(){
+        ctx.fillRect(this.x, this.y, 10, 10);
+    }
+    this.isAlive = function(){
+        return this.y &lt; this.heightOfCanvas;
+    }
+}
+
+var particlesList = [];
+
+function update(){
+  ctx.clearRect(0, 0, 500, 200);    // Clear frame.
+  
+  // Get next frame ready
+  requestAnimationFrame(update);
+
+  // Fill array
+  if (particlesList.length &lt; 10) {
+      particlesList.push(new Particle(Math.random() * 500, 0, 300));
+  }
+  
+  // Move the particles
+  particlesList.forEach(p =&gt; p.update());
+
+  // Cull any &quot;dead&quot; particles
+  particlesList = particlesList.filter(p =&gt; p.isAlive());
+
+  // Draw the living particles
+  particlesList.forEach(p =&gt; p.draw())
+
+}
+
+update();
+</code></pre>
+
+<p><p data-height="250" data-theme-id="0" data-slug-hash="RpWNZz" data-default-tab="js,result" data-user="Spyr1014" data-embed-version="2" data-pen-title="RpWNZz" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/Spyr1014/pen/RpWNZz/">RpWNZz</a> by Andrew Jakubowicz (<a href="http://codepen.io/Spyr1014">@Spyr1014</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="you-have-the-power">You have the power</h1>
+
+<p>There are many qualities that you can change!
+Feel free to invent new particles that die in different ways.
+Maybe when a particle dies it adds a bunch more particles to the array?
+Maybe the particle stores an opacity and fades out?</p>
+
+<p><em>If you find a problem or have any questions/concerns, please <a href="https://twitter.com/spyr1014">tweet me</a>!</em></p>
+
+
+    
+        <script src="/js/simple_particles_canvas.ts-bundle-e40eeedcfc22c145c450.js"></script>
+    
+
+    </section>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+<script src="/js/polyfill.js-bundle-e40eeedcfc22c145c450.js"></script>
+<script src="/js/cover.ts-bundle-e40eeedcfc22c145c450.js"></script>
+<footer id="site-footer">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img style="float:right;" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</footer>
+</body>
+</html>

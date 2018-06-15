@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testing for the Novice JavaScript Developer</title>
+
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/main-23344ecd.css" />
+    
+    
+    
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-73893959-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    
+</head>
+
+<nav class="fixed-nav-bar">
+<ul>
+    <li><a href="/">Home</a></li>
+    <li class="wide"></li>
+    <li><a href="/about/about.html">About</a></li>
+    <li><a href="/contact/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+
+<body>
+<div id="cover-container">
+    <div id="front-cover">
+        <h1>Post</h1>
+    </div>
+</div>
+
+    <section class="section-content">
+    <h1>Testing for the Novice JavaScript Developer</h1>
+    
+
+    
+
+<blockquote>
+<p>“If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization.” ~<em>Gerald Weinberg</em></p>
+</blockquote>
+
+<p>I love testing.
+Quite early in my journey of learning to code, I heard of this “Test Driven Development” thing. Around the same time I was starting to expand the scope of my projects, and was running into very tricky bugs. Sometimes things that worked stopped working and I had no idea why.
+Testing only revealed more problems; my code was a giant tangled mess that couldn’t be tested. Testing my code has fundamentally improved my coding, and I hope this introduction helps you too.</p>
+
+<p>What I hope you’ll gain from this post:</p>
+
+<ul>
+<li>Setting up Mocha (a testing framework) and chai (an assertion library).</li>
+<li>Writing and running your tests.</li>
+<li>Synchronous tests.</li>
+<li>Asynchronous tests (callbacks).</li>
+<li>Some features I’ve used a lot (just so you know they exist).</li>
+</ul>
+
+<p>I’ll expect a very basic understanding of command line and npm.</p>
+
+<h1 id="setup">Setup</h1>
+
+<p>First let’s make a new project. Create a folder and enter into the command line:</p>
+
+<pre><code class="language-bash">npm init -y
+</code></pre>
+
+<p>This will initialise the project with npm.</p>
+
+<p>Then install mocha.</p>
+
+<pre><code class="language-bash">npm install mocha -g
+</code></pre>
+
+<p>or</p>
+
+<pre><code class="language-bash">sudo npm install mocha -g
+</code></pre>
+
+<p>And install chai with:</p>
+
+<pre><code class="language-bash">npm install chai --save-dev
+</code></pre>
+
+<p>Mocha is the framework that is used to set up the tests, run the tests, name the tests and do your tests housekeeping.
+Chai is an assertion library, meaning it’s the thing that you’ll use to check if things are doing what you <em>expect</em>.
+This will become more clear with the examples that follow.</p>
+
+<p>In your root directory create a file called <code>index.js</code>.
+This will be the file we’ll test.
+Also create a folder called <code>test</code> and put a file inside called <code>index.spec.js</code>.
+This file is where we will write the tests for <code>index.js</code>.</p>
+
+<p>Your project should look like so:</p>
+
+<pre><code class="language-bash">├── yourAwesomeProject/
+│   ├── index.js
+│   ├── test
+│   │   ├── index.spec.js
+│   ├── package.json
+</code></pre>
+
+<p>Alright! We’ve done nothing, but now is a perfect time to make sure mocha is working.</p>
+
+<p>Type</p>
+
+<pre><code class="language-bash">mocha test
+</code></pre>
+
+<p>into your command prompt.</p>
+
+<p>Hopefully you get something like this -&gt;</p>
+
+<pre><code class="language-bash">0 passing (3ms)
+</code></pre>
+
+<p>You just ran the test runner!
+There are no tests there, but that doesn’t matter.
+We’ll fill it with tests soon enough.</p>
+
+<h1 id="writing-your-first-test">Writing your first test!</h1>
+
+<p>Write the following code into your <code>index.js</code>.</p>
+
+<pre><code class="language-javascript">// index.js
+
+// Stub
+exports.addTwoNumbers = function (a, b) {
+    return 0;
+}
+</code></pre>
+
+<p>This function is called a “stub” function.
+This code doesn’t have any logic, but it still returns a number.
+This allows us to write a test for it without the hassle of trying to implement the function logic yet.</p>
+
+<p>Jump over to your <code>index.spec.js</code> file.
+I’ll show you the code, and then I’ll break it down.
+Make sure to type it out yourself.</p>
+
+<pre><code class="language-javascript">// index.spec.js
+
+var index = require(&quot;../index&quot;);
+var chai = require(&quot;chai&quot;);
+var expect = chai.expect;
+describe(&quot;index.js tests&quot;, function() {
+    it(&quot;addTwoNumbers returns a number&quot;, function() {
+        expect(index.addTwoNumbers(0, 0)).to.be.a(&quot;number&quot;);
+    });
+});
+</code></pre>
+
+<p>To make sure everything is working, once again type <code>mocha test</code> into your terminal.
+You should get this cool snazzy output in your terminal:</p>
+
+<pre><code class="language-bash">index.js tests
+    ✓ addTwoNumbers returns a number
+1 passing (11ms)
+</code></pre>
+
+<p>Everything is working, so let’s understand what we’ve written.</p>
+
+<p>The first two lines import your file <code>index.js</code> which contains the function you want to test and <strong>chai</strong> which is the assertion library you previously installed using npm.
+<code>var expect = chai.expect;</code> just gives us a short way to call <code>chai.expect</code>.</p>
+
+<h2 id="describe-grouping-a-collection-of-individual-tests">describe() — Grouping a collection of individual tests</h2>
+
+<pre><code class="language-javascript">describe(&lt;Heading of Tests&gt;,testsInCallback);
+</code></pre>
+
+<p>Describe is like a heading.
+It’s a way to group a collection of tests together.
+You’ll notice in the above example, ‘index.js tests’ is the heading, and ‘addTwoNumbers returns a number’ is the <strong>i</strong>ndividual <strong>t</strong>est (it) grouped with it.</p>
+
+<h2 id="it-individual-test">it() - ‘Individual Test’</h2>
+
+<pre><code class="language-javascript">it(&lt;Name of Test&gt;, testInCallback);
+</code></pre>
+
+<p>Every test assertion needs its own individual test.
+For example, to test that our function ‘addTwoNumbers’ can actually add two numbers, we should add at least one other test.</p>
+
+<p>We’re going to add another test:</p>
+
+<pre><code class="language-javascript">// index.spec.js
+
+var index = require(&quot;../index&quot;);
+var chai = require(&quot;chai&quot;);
+var expect = chai.expect;
+describe(&quot;index.js tests&quot;, function() {
+    it(&quot;addTwoNumbers returns a number&quot;, function() {
+        expect(index.addTwoNumbers(0, 0)).to.be.a(&quot;number&quot;);
+    });
+    it(&quot;addTwoNumbers can add 1 + 2&quot;, function() {
+        expect(index.addTwoNumbers(1,2)).to.equal(3);
+    });
+});
+</code></pre>
+
+<p>We’ve added it to the group “index.js tests” demarcated by the <code>describe</code> function, and we’ve added it below the previous individual test.
+You’ll notice that the syntax used by <code>expect</code> is really easy to read.</p>
+
+<pre><code class="language-javascript">expect(&lt;your function&gt;).to.equal(&lt;something&gt;);
+</code></pre>
+
+<p>The above code is how you check equality.
+If you are checking deep equality, for example to check if the fields inside objects are equal you can just add ‘deep’ to the chain like so:</p>
+
+<pre><code class="language-javascript">expect(&lt;yourObject&gt;).to.deep.equal(&lt;anotherObject&gt;);
+</code></pre>
+
+<p>The documentation for chai’s <em>expect</em> is clear and straight forward so <a href="http://chaijs.com/api/bdd/">I recommend you take a look</a>.</p>
+
+<p>If you run <code>mocha test</code> now you&rsquo;ll get a test failure.</p>
+
+<pre><code class="language-bash">index.js tests
+    ✓ addTwoNumbers returns a number
+    1) addTwoNumbers can add 1 + 2
+1 passing (19ms)
+  1 failing
+1) index.js tests addTwoNumbers can add 1 + 2:
+AssertionError: expected 0 to equal 3
+      + expected - actual
+      -0
+      +3
+at Context.&lt;anonymous&gt; (test/index.spec.js:9:45)
+</code></pre>
+
+<p>This information is extremely valuable as it allows you to see what your expect actually returned (in this case a zero).</p>
+
+<p>Now that your test is failing, you can resolve it by fixing the code in <code>index.js</code>.
+Tests will not make your code perfect, but they do provide peace of mind.</p>
+
+<p>As a quick note, this technique is called “Red, Green, Refactor”.
+We’ve only covered the “Red, Green” part, but the idea is that you write a test that fails.
+Then fix your code to pass the test.
+Finally you can refactor your code with the knowledge that you’ve got a test to check that your refactor doesn’t break anything.</p>
+
+<p>We’ve just spent the whole time so far with synchronous tests.
+But what if you need to test callbacks or promises?</p>
+
+<h1 id="asynchronous-tests">Asynchronous tests</h1>
+
+<p>Testing asynchronous code is not difficult, but requires one additional piece of code that hasn’t been covered yet called <code>done()</code>.
+Without done, mocha will dispatch your asynchronous code and continue without waiting for the assertion or execution of your callback.
+I’ll show you with a concrete example.</p>
+
+<pre><code class="language-javascript">describe(&quot;Broken Async Code&quot;, function() {
+    it('Async test', function() {
+        setTimeout(function(){
+            //failing test
+            expect(true).to.be.false;
+        }, 1000);
+    });
+});
+</code></pre>
+
+<p>The above test passes.
+This is because <code>it</code> only fails a test if it catches the error from the <code>expect</code>.
+Because this is asynchronously executed (by a delay of 1 second), mocha skips over this as a passing test.
+We need to tell Mocha to wait by adding done.
+<code>done</code> must be added as an argument and after the assertion (to tell Mocha that we&rsquo;ve run the test).</p>
+
+<pre><code class="language-javascript">describe(&quot;Fixed Async Code&quot;, function() {
+    it('Async test', function(done) {     // Done added here.
+        setTimeout(function(){
+            //failing test
+            expect(true).to.be.false;
+            done();     // Tells mocha to run next test.
+        }, 1000);
+    });
+});
+</code></pre>
+
+<p>You’ll notice that when you run <code>mocha test</code>, it’ll pause for 1 second and then give a failure.
+Sadly this isn’t the really detailed error that mocha gave earlier in the synchronous examples.
+This is solved by mocha’s built-in promises, but this is another topic and out of scope for this post.
+If you’re interested I recommend <a href="http://tobyho.com/2015/12/16/mocha-with-promises/">looking at this</a>
+(it’s a really nice way of writing async tests with detailed responses).</p>
+
+<h1 id="some-super-useful-features-i-use">Some super useful features I use</h1>
+
+<ol>
+<li>To run a single test or group just add <code>.only</code> to the end of <code>describe</code> or <code>it</code>.</li>
+</ol>
+
+<pre><code class="language-javascript">describe.only(&quot;index.js tests&quot;, function () {
+</code></pre>
+
+<pre><code class="language-javascript">it.only(&quot;addTwoNumbers returns a number&quot;, function () {
+</code></pre>
+
+<ol>
+<li><p>Functions that can be used inside <code>describe</code> blocks.</p>
+
+<ul>
+<li><code>before()</code>, <code>beforeEach()</code>, <code>after()</code>, <code>afterEach()</code></li>
+<li>Use for set up and clean up.</li>
+</ul></li>
+
+<li><p>Mocha can be used in the browser! It loads up a cool web page with a todo list style format with all your tests. (This makes testing web pages far easier).</p></li>
+</ol>
+
+<p>Good luck. And remember that testing is a skill, so practice will make perfect. :)</p>
+
+
+    
+
+    </section>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+<script src="/js/polyfill.js-bundle-e40eeedcfc22c145c450.js"></script>
+<script src="/js/cover.ts-bundle-e40eeedcfc22c145c450.js"></script>
+<footer id="site-footer">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img style="float:right;" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascipt on Andrew Jakubowicz</title>
+    <link>https://andrewjakubowicz.me/tags/javascipt.html</link>
+    <description>Recent content in Javascipt on Andrew Jakubowicz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Feb 2017 21:30:47 +1100</lastBuildDate>
+    
+	<atom:link href="https://andrewjakubowicz.me/tags/javascipt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intro to Canvas with Particles</title>
+      <link>https://andrewjakubowicz.me/post/simple_particles_canvas.html</link>
+      <pubDate>Mon, 27 Feb 2017 21:30:47 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/simple_particles_canvas.html</guid>
+      <description>This is what we’ll be making!
+ If you can’t see anything then your device doesn’t support canvas. You can still follow along, but it’ll be more fun if you can see your work.
+Canvas is a super fun way to create animations on the browser! It’s also very easy to get started.
+To make it even easier to start, use CodePen to write your code. I’ll be sharing CodePen examples along the way.</description>
+    </item>
+    
+  </channel>
+</rss>

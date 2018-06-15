@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tdd on Andrew Jakubowicz</title>
+    <link>https://andrewjakubowicz.me/tags/tdd.html</link>
+    <description>Recent content in Tdd on Andrew Jakubowicz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Feb 2017 11:40:25 +1100</lastBuildDate>
+    
+	<atom:link href="https://andrewjakubowicz.me/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Testing for the Novice JavaScript Developer</title>
+      <link>https://andrewjakubowicz.me/post/novicetest.html</link>
+      <pubDate>Thu, 23 Feb 2017 11:40:25 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/novicetest.html</guid>
+      <description>“If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization.” ~Gerald Weinberg
+ I love testing. Quite early in my journey of learning to code, I heard of this “Test Driven Development” thing. Around the same time I was starting to expand the scope of my projects, and was running into very tricky bugs. Sometimes things that worked stopped working and I had no idea why.</description>
+    </item>
+    
+  </channel>
+</rss>

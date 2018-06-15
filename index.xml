@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andrew Jakubowicz</title>
+    <link>https://andrewjakubowicz.me/</link>
+    <description>Recent content on Andrew Jakubowicz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Mar 2017 17:20:34 +1100</lastBuildDate>
+    
+	<atom:link href="https://andrewjakubowicz.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A* algorithm</title>
+      <link>https://andrewjakubowicz.me/post/astar.html</link>
+      <pubDate>Tue, 07 Mar 2017 17:20:34 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/astar.html</guid>
+      <description>Run A*
+Instructions Click and drag on everything!
+Click on a wall to destroy it (and drag around to destroy multiple walls). Clicking on an empty space allows you to rebuild walls (again dragging builds lots of walls)!
+The start and end can be dragged around as well!
+What is the A star algorithm? The A* algorithm is a path finding algorithm that finds the shortest path from some position to some goal.</description>
+    </item>
+    
+    <item>
+      <title>Your Front End Checklist</title>
+      <link>https://andrewjakubowicz.me/post/javascriptchecklist.html</link>
+      <pubDate>Thu, 02 Mar 2017 19:13:53 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/javascriptchecklist.html</guid>
+      <description>This is my ongoing checklist for a good Front-End dev environment. Please tweet me with any tools I&amp;rsquo;ve missed.
+It originated from the Pluralsight course “Building a JavaScript Development Environment” by Cory House. I use this as a refresher, and strongly recommend you check out the full course if you want a much deeper understanding.
+The JavaScript ecosystem moves fast, so the categories are more important than the tools.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Canvas with Particles</title>
+      <link>https://andrewjakubowicz.me/post/simple_particles_canvas.html</link>
+      <pubDate>Mon, 27 Feb 2017 21:30:47 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/simple_particles_canvas.html</guid>
+      <description>This is what we’ll be making!
+ If you can’t see anything then your device doesn’t support canvas. You can still follow along, but it’ll be more fun if you can see your work.
+Canvas is a super fun way to create animations on the browser! It’s also very easy to get started.
+To make it even easier to start, use CodePen to write your code. I’ll be sharing CodePen examples along the way.</description>
+    </item>
+    
+    <item>
+      <title>Postmortem - Ts-depDraw: Dependency explorer</title>
+      <link>https://andrewjakubowicz.me/post/postmortem-tsdepdraw.html</link>
+      <pubDate>Fri, 24 Feb 2017 17:20:27 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/postmortem-tsdepdraw.html</guid>
+      <description>Why is visualising dependencies and projects interesting?
+Imagine you&amp;rsquo;re performing a code review, and you are able to quickly determine how that new piece of code interacts with the project. The graph automatically adds all the edges between nodes, and no hidden dependencies surprise you down the line. This subgraph is then shared with the concerns highlighted to be resolved.
+ We&amp;rsquo;re moving into a world where we expect more from our code.</description>
+    </item>
+    
+    <item>
+      <title>Testing for the Novice JavaScript Developer</title>
+      <link>https://andrewjakubowicz.me/post/novicetest.html</link>
+      <pubDate>Thu, 23 Feb 2017 11:40:25 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/novicetest.html</guid>
+      <description>“If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization.” ~Gerald Weinberg
+ I love testing. Quite early in my journey of learning to code, I heard of this “Test Driven Development” thing. Around the same time I was starting to expand the scope of my projects, and was running into very tricky bugs. Sometimes things that worked stopped working and I had no idea why.</description>
+    </item>
+    
+    <item>
+      <title>N-Queens Problem Backtracking Demo</title>
+      <link>https://andrewjakubowicz.me/post/nqueens.html</link>
+      <pubDate>Wed, 22 Feb 2017 17:20:27 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/nqueens.html</guid>
+      <description>A visualization and explanation of how a backtracking algorithm searches for a solution to a problem.
+  Number of Queens: Play Animation
+For performance reasons n is bound between 4 and 10.
+Note: Requires canvas supported browser. Tested on Chrome, Safari, Edge, Firefox.
+N-queens problem If I have a chessboard of width and length n where n is a number.
+How can n queens be placed so that none of the queens are attacking one another?</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://andrewjakubowicz.me/about/about.html</link>
+      <pubDate>Wed, 15 Feb 2017 11:16:39 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/about/about.html</guid>
+      <description>Summary I am a software engineering student / web developer / open source lover from Melbourne, Australia.
+Loves  Javascript and the web Functional Programming Go Distributed Computing Learning  Projects Typescript Dependency Explorer A prototype/exploration into a novel UI for navigating dependencies in TypeScript projects.
+
+Check it out on GitHub!
+Speaking 2017  &amp;ldquo;Getting started with Testing in JavaScript&amp;rdquo; at the Free Code Camp meetup, January 2017 in Melbourne.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://andrewjakubowicz.me/contact/contact.html</link>
+      <pubDate>Wed, 15 Feb 2017 11:16:39 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/contact/contact.html</guid>
+      <description>Hi, it would be a pleasure to speak to you. Tweet Me Medium Github Linkedin Email me spyr1014 at gmail dot com</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Demo on Andrew Jakubowicz</title>
+    <link>https://andrewjakubowicz.me/categories/demo.html</link>
+    <description>Recent content in Demo on Andrew Jakubowicz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Mar 2017 17:20:34 +1100</lastBuildDate>
+    
+	<atom:link href="https://andrewjakubowicz.me/categories/demo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A* algorithm</title>
+      <link>https://andrewjakubowicz.me/post/astar.html</link>
+      <pubDate>Tue, 07 Mar 2017 17:20:34 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/astar.html</guid>
+      <description>Run A*
+Instructions Click and drag on everything!
+Click on a wall to destroy it (and drag around to destroy multiple walls). Clicking on an empty space allows you to rebuild walls (again dragging builds lots of walls)!
+The start and end can be dragged around as well!
+What is the A star algorithm? The A* algorithm is a path finding algorithm that finds the shortest path from some position to some goal.</description>
+    </item>
+    
+    <item>
+      <title>N-Queens Problem Backtracking Demo</title>
+      <link>https://andrewjakubowicz.me/post/nqueens.html</link>
+      <pubDate>Wed, 22 Feb 2017 17:20:27 +1100</pubDate>
+      
+      <guid>https://andrewjakubowicz.me/post/nqueens.html</guid>
+      <description>A visualization and explanation of how a backtracking algorithm searches for a solution to a problem.
+  Number of Queens: Play Animation
+For performance reasons n is bound between 4 and 10.
+Note: Requires canvas supported browser. Tested on Chrome, Safari, Edge, Firefox.
+N-queens problem If I have a chessboard of width and length n where n is a number.
+How can n queens be placed so that none of the queens are attacking one another?</description>
+    </item>
+    
+  </channel>
+</rss>

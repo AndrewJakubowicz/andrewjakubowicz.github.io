@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Front End Checklist</title>
+
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/main-23344ecd.css" />
+    
+    
+    
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-73893959-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    
+</head>
+
+<nav class="fixed-nav-bar">
+<ul>
+    <li><a href="/">Home</a></li>
+    <li class="wide"></li>
+    <li><a href="/about/about.html">About</a></li>
+    <li><a href="/contact/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+
+<body>
+<div id="cover-container">
+    <div id="front-cover">
+        <h1>Post</h1>
+    </div>
+</div>
+
+    <section class="section-content">
+    <h1>Your Front End Checklist</h1>
+    
+
+    
+
+<p>This is my ongoing checklist for a good Front-End dev environment.
+Please tweet me with any tools I&rsquo;ve missed.</p>
+
+<p>It originated from the Pluralsight course <a href="https://www.pluralsight.com/courses/javascript-development-environment">“Building a JavaScript Development Environment”</a> by Cory House.
+I use this as a refresher, and strongly recommend you check out the full course
+if you want a much deeper understanding.</p>
+
+<p>The JavaScript ecosystem moves fast, so the categories are more important than the tools.</p>
+
+<h2 id="editor-config">Editor Config</h2>
+
+<p>This is a brilliant way to maintain consistency between editors.
+This allows you to write rules like &ldquo;tabs vs spaces&rdquo; and &ldquo;how many space?&rdquo; You can then enforce these rules across a wide range of IDE&rsquo;s with the editor config plugin.</p>
+
+<h2 id="use-a-developer-web-server">Use a developer web server</h2>
+
+<p>Let&rsquo;s you set up a simple web server for development.
+My favourite is browserSync.
+With browserSync I can develop my Hugo website
+and see changes on an ipad, mobile and desktop in real time.</p>
+
+<ul>
+<li>http-server</li>
+<li>live-server</li>
+<li>express / koa / hapi</li>
+<li>webpack</li>
+<li>browsersync</li>
+</ul>
+
+<h2 id="sharing-your-work-with-the-client">Sharing your work with the client</h2>
+
+<p>You&rsquo;re working for a client, and receive an email asking for progress.
+Wouldn&rsquo;t it be great to send a link that shows your current progress LIVE!</p>
+
+<ul>
+<li>localtunnel</li>
+<li>ngrok</li>
+<li>now</li>
+<li>surge</li>
+</ul>
+
+<h2 id="automation">Automation</h2>
+
+<p>Set up</p>
+
+<ul>
+<li>npm scripts</li>
+<li>yarn scripts</li>
+<li>gulp</li>
+<li>grunt</li>
+</ul>
+
+<h2 id="bundling">Bundling</h2>
+
+<ul>
+<li>Webpack</li>
+<li>Browserify</li>
+<li>Rollup</li>
+</ul>
+
+<h2 id="linting">Linting</h2>
+
+<p>Enforces code consistency in your project. Also enforces coding standards. Useful for restricting <code>console.log</code> / <code>debugger</code> in your production build.
+So many presets to choose from: Standard JS, Airbnb, XO.</p>
+
+<ul>
+<li>ESLint</li>
+</ul>
+
+<h2 id="continuous-integration-ci">Continuous Integration (CI)</h2>
+
+<p>Catches errors before they get into production (if you&rsquo;re testing).
+Plays well with your version control system.</p>
+
+<p>Can use multiple solutions at the same time to test various OS&rsquo;s. I.e. TravisCI for Linux, Appveyor for Windows.</p>
+
+<p>Hosted and self-hosted options.</p>
+
+<ul>
+<li>TravisCI</li>
+<li>Appveyor</li>
+<li>Jenkins</li>
+<li>CircleCI</li>
+<li>Semaphore</li>
+<li>SnapCI</li>
+</ul>
+
+<h2 id="mocking">Mocking</h2>
+
+<p>Work on your Front-end without a finished backend.
+JSON server points at fake data, and supports updates and changes to the data!
+Keep API centralised and have an easy way to change between dev and production.</p>
+
+<ul>
+<li>api-mock</li>
+<li>JSON server</li>
+<li>JSON Schema faker</li>
+</ul>
+
+<p>Good examples are:</p>
+
+<ul>
+<li>faker.js</li>
+<li>chance.js</li>
+<li>randexp.js</li>
+</ul>
+
+<h1 id="production-improvements">Production improvements</h1>
+
+<p>These are improvements to consider for your deployed web page.</p>
+
+<h2 id="minification">Minification</h2>
+
+<p>Shrink everything, html, css, js&hellip;</p>
+
+<p>Smaller filesize == happier customers.</p>
+
+<h2 id="dynamic-html">Dynamic HTML</h2>
+
+<p>Inject content into html as well as &ldquo;production only&rdquo; info.</p>
+
+<h2 id="bundle-splitting">Bundle Splitting</h2>
+
+<p>Keep the files that <em>don&rsquo;t</em> change often separate from files <em>that change often</em>. Users can cache these library/vendor files. Reduces the amount they&rsquo;ll need to download when accessing your updated site.</p>
+
+<h2 id="bust-cache">Bust Cache</h2>
+
+<p>You can allow people to save your assets for <em>up to a year</em>! But you may sometimes need to change a file, and 1 year is a long time to wait for changes. Cache busting to the rescue. Your files contain a hash in the name. If the contents change the hash changes. If the html page references a changed file, the hash won&rsquo;t match the cached file, forcing the browser to grab the updated file.</p>
+
+<h2 id="error-logging">Error logging</h2>
+
+<p>There are production grade products available for tracing errors and usage.</p>
+
+
+    
+
+    </section>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+<script src="/js/polyfill.js-bundle-e40eeedcfc22c145c450.js"></script>
+<script src="/js/cover.ts-bundle-e40eeedcfc22c145c450.js"></script>
+<footer id="site-footer">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img style="float:right;" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</footer>
+</body>
+</html>

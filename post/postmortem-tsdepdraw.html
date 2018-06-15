@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Postmortem - Ts-depDraw: Dependency explorer</title>
+
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/main-23344ecd.css" />
+    
+    
+    
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-73893959-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    
+</head>
+
+<nav class="fixed-nav-bar">
+<ul>
+    <li><a href="/">Home</a></li>
+    <li class="wide"></li>
+    <li><a href="/about/about.html">About</a></li>
+    <li><a href="/contact/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+
+<body>
+<div id="cover-container">
+    <div id="front-cover">
+        <h1>Post</h1>
+    </div>
+</div>
+
+    <section class="section-content">
+    <h1>Postmortem - Ts-depDraw: Dependency explorer</h1>
+    
+
+    
+
+<p>Why is visualising dependencies and projects interesting?</p>
+
+<p>Imagine you&rsquo;re performing a code review, and you are able to quickly determine how that new piece of code interacts with the project.
+The graph automatically adds all the edges between nodes, and no hidden dependencies surprise you down the line.
+This subgraph is then shared with the concerns highlighted to be resolved.</p>
+
+<blockquote>
+<p>We&rsquo;re moving into a world where we expect more from our code.</p>
+</blockquote>
+
+<p>The company <a href="https://sourcegraph.com/">SourceGraph</a> has created a “fast, global, semantic code search and cross-reference engine”.
+Their product allows developers access to “definition information”, “go to definition”, “local and external references”, all in the browser!</p>
+
+<h1 id="high-level-architecture-of-the-finished-prototype">High level architecture of the finished prototype</h1>
+
+<p><img src="http://i.imgur.com/6x2Y3jr.png" alt="High level cloud architecture of ts-depdraw" />
+<p class="caption">ts-depdraw architecture</p></p>
+
+<h1 id="pre-beginning">Pre-Beginning</h1>
+
+<p>Mid 2016 I expressed an interest in functional programming and a desire to work on a project.</p>
+
+<p>I never anticipated the amount of growth this 10 week project would cause.</p>
+
+<p>Here I&rsquo;ll share how I created such a large prototype, with only a couple months programming under my belt.
+If you&rsquo;re a junior developer, I hope this post will stimulate you to hack on larger projects without fear.</p>
+
+<h1 id="beginning">Beginning</h1>
+
+<p>I knew almost nothing about what was in store.
+Yet I did have a title: “Typescript Dependency Visualiser”.</p>
+
+<p>The first meeting was vague and exciting.
+I would explore the following areas:</p>
+
+<ul>
+<li>Find the best way to find dependencies in projects.
+
+<ul>
+<li>Typescript compiler?</li>
+<li>Typescript language service?</li>
+<li>Typescript tsserver that VSCode uses?</li>
+<li>Other?</li>
+</ul></li>
+<li>Think up a high level architecture that will allow for rapid prototyping.</li>
+</ul>
+
+<p>I discovered that dependency visualisations had already been made.
+<a href="#">Atom-typescript</a> as well as <a href="#">alm.tools</a> had very well thought out dependency visualisers.</p>
+
+<p><img src="https://raw.githubusercontent.com/TypeStrong/atom-typescript-examples/master/screens/dependencyView/size.png" alt="Atom dependency-view" /></p>
+
+<p class="caption">File based dependency view</p>
+
+<p>Dave Cheney&rsquo;s great post exploring different <a href="https://dave.cheney.net/2014/11/21/visualising-dependencies">visualisations of dependencies in Go packages</a>
+gave me further ideas.</p>
+
+<p>It also showed the challenges of visualising a large package.</p>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2014/11/Screenshot-2014-11-21-at-22.45.30.png" alt="A large Go package" /></p>
+
+<p class="caption">Source: https://dave.cheney.net/2014/11/21/visualising-dependencies</p>
+
+<p>Many dependency viewers are file based or module based.
+I needed to see if it was possible to draw dependency graphs at a micro level.</p>
+
+<h1 id="exploring-the-typescript-tsserver">Exploring the TypeScript Tsserver</h1>
+
+<p>The Tsserver accepts commands as a string (terminated by a newline). A response is then printed back.</p>
+
+<p>Commands look like this, and follow the protocol <a href="https://github.com/Microsoft/TypeScript/blob/master/lib/protocol.d.ts">defined here</a>.</p>
+
+<pre><code class="language-json">{
+    &quot;seq&quot;:0,
+    &quot;type&quot;:&quot;request&quot;,
+    &quot;command&quot;:&quot;open&quot;,
+    &quot;arguments&quot;:{
+        &quot;file&quot;:&quot;app.ts&quot;
+    }
+}
+</code></pre>
+
+<p>During this time I was also exploring the transpiler.
+Again a couple great posts helped me out:
+ - <a href="https://github.com/Microsoft/TypeScript/issues/1651#issuecomment-69877863">How to do a straight TS emit</a>)
+ - <a href="http://blog.scottlogic.com/2015/01/20/typescript-compiler-api.html">Investigating Typescript Compiler APIs</a>.</p>
+
+<p>This exploration, although tangental to the tsserver, helped me tokinize files in order to find dependencies later on.</p>
+
+<h1 id="testing-the-typescript-tsserver">Testing the TypeScript Tsserver</h1>
+
+<p>Testing was important to me, especially because I needed a way to see what the tsserver was emitting.
+This saved me recently when an update added an extra property to the responses.</p>
+
+<p>This post helped me <a href="http://krasimirtsonev.com/blog/article/Nodejs-managing-child-processes-starting-stopping-exec-spawn">set up child processes</a>,
+while <a href="https://www.codementor.io/nodejs/tutorial/unit-testing-nodejs-tdd-mocha-sinon">this post helped me set up my testing environment</a>.</p>
+
+<p>The tests self documented the responses that Tsserver gave for various commands.
+This form of documentation helped greatly.</p>
+
+<p>Thanks to TypeScript being open source, I was able to see the implementation of the tsserver.
+This helped greatly, as I could see what compiler functions were being used to get various information.
+It was a wild ride, because the code contained many techniques and secrets that I wouldn&rsquo;t have worked out by myself.</p>
+
+<h1 id="some-early-bugs-and-errors">Some early Bugs and Errors</h1>
+
+<ul>
+<li>hard coded filepaths caused a problem between operating systems.</li>
+<li>needing to explicitly call TypeScript library files for promiese.</li>
+<li>“exec” vs “spawn” behaviour for processes on different operating systems.</li>
+</ul>
+
+<p>Which quickly lead to a feeling of dread.</p>
+
+<p>After spending a week prototyping the API, I realised the best way to learn what I&rsquo;d really need is
+with a MVP (Minimum Viable Product).</p>
+
+<h1 id="front-end-fun">Front End Fun</h1>
+
+<p>I immediately knew that the user facing interaction needed to be extensible, composable and easily changed.
+The logic also had to be loosely coupled, and as pure as possible.</p>
+
+<p>These decisions eventually led me to choose.</p>
+
+<ul>
+<li>React: A great view library.</li>
+<li>Redux: Scratched all my itches, making the UI based on pure actions. (But everything can&rsquo;t be pure!)</li>
+<li>Rxjs + Redux-Observable: Middleware for side effect actions. (D3js mutations + api calls)</li>
+</ul>
+
+<p>But before I settled on that I also spent one day with Aurelia, and one day with Ember.
+I also considered Elm, but eliminated it for project maintainability reasons.</p>
+
+<p>Aurelia and Ember had the same problem, which is that they gave too much.
+I didn&rsquo;t need routing and I felt like the framework got in the way.</p>
+
+<p>Redux felt natural, and Rxjs allowed very impressive control over side effects and events.
+Looking back, this four day decision was worth it.
+I also got practice throwing together a small app in lots of different frameworks / libraries.</p>
+
+<p>At this point I just worked as quickly as possible to throw together the MVP.
+My API&rsquo;s naivety showed through quickly, but could be quickly adapted.</p>
+
+<h1 id="learning-d3">Learning D3</h1>
+
+<p>“D3.js Essential Training for Data Scientists”, a Lynda course, helped me quickstart D3.
+The course was fantastic.
+But, the course didn&rsquo;t cover graphs.</p>
+
+<p>Graphs turned out to be quite challenging.
+I really wanted to use an immutable Redux store as my sole point of truth,
+but it couldn&rsquo;t be done.
+The graph information, when loaded into a force layout graph, was mutated.
+Extra information like <strong>x</strong> and <strong>y</strong> coordinates were added.
+This mutation wasn&rsquo;t reflected in the Redux store and caused many bugs.
+Adding and removing nodes was going to be challenging.</p>
+
+<h2 id="the-solution">The solution</h2>
+
+<p>Hashing nodes!</p>
+
+<p>I created a key value map as a second store.
+The key was a hashed key of the node, and the value was the node itself.
+The nodes passed into the D3 force directed graph, were references to this store.
+Therefore all mutations were stored within this key value store.
+This allowed nodes returned by the API, to be compared with mutated nodes in the graph.</p>
+
+<p>I also had to keep a list of all the node hashes (with indices) as well as edge hashes
+allowing me to keep tabs on where the nodes were in the force directed graph.</p>
+
+<p>Now I could add and remove nodes! WOOO!!!!!</p>
+
+<p>This solution also removed any need for a graph database.</p>
+
+<h1 id="logging-externally">Logging externally</h1>
+
+<p><a href="https://nectar.org.au/research-cloud/">Nectar Cloud</a> to the rescue.
+Here I set up a virtual machine and database to store user actions.</p>
+
+<p>I used SSH to configure nginx as a reverse proxy to my Go HTTP server.</p>
+
+<p>After a week I had a virtual machine with two API endpoints that I could use
+to retrieve the database data,
+as well as an endpoint for the data to be sent to.</p>
+
+<h1 id="all-the-extra-things-i-learnt-along-the-way">All the extra things I learnt along the way</h1>
+
+<ul>
+<li>Npm packages</li>
+<li>Bundling options like webpack</li>
+<li>Npm scripts / gulp</li>
+<li>Continuous integration</li>
+<li>Typescript</li>
+<li>Setting up virtual machines via the command line</li>
+<li>Dependency injection / inversion of control patterns</li>
+<li>Git commands for branch control</li>
+<li>How difficult dependencies can be in a dynamic language</li>
+<li>Functional reactive programming</li>
+<li>Observables</li>
+<li>React / Redux / Rxjs / D3 / Node / Express</li>
+<li>Go / BoltDB</li>
+<li>Logging</li>
+</ul>
+
+<h1 id="things-i-ll-do-better-next-time">Things I&rsquo;ll do better next time</h1>
+
+<ul>
+<li>Set up environmental variables for dev and production</li>
+<li>Mock an API and start on the Front End faster</li>
+<li>Spend more time looking at existing solutions</li>
+<li>Test across various operating systems</li>
+</ul>
+
+
+    
+
+    </section>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+<script src="/js/polyfill.js-bundle-e40eeedcfc22c145c450.js"></script>
+<script src="/js/cover.ts-bundle-e40eeedcfc22c145c450.js"></script>
+<footer id="site-footer">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img style="float:right;" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</footer>
+</body>
+</html>
