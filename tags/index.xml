@@ -2,120 +2,120 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Andrew Jakubowicz</title>
-    <link>https://andrewjakubowicz.me/tags.html</link>
+    <link>https://andrewjakubowicz.github.io/tags.html</link>
     <description>Recent content in Tags on Andrew Jakubowicz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Mar 2017 17:20:34 +1100</lastBuildDate>
     
-	<atom:link href="https://andrewjakubowicz.me/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andrewjakubowicz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Algorithm</title>
-      <link>https://andrewjakubowicz.me/tags/algorithm.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/algorithm.html</link>
       <pubDate>Tue, 07 Mar 2017 17:20:34 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/algorithm.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/algorithm.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Canvas</title>
-      <link>https://andrewjakubowicz.me/tags/canvas.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/canvas.html</link>
       <pubDate>Tue, 07 Mar 2017 17:20:34 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/canvas.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/canvas.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Continuous Integration</title>
-      <link>https://andrewjakubowicz.me/tags/continuous-integration.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/continuous-integration.html</link>
       <pubDate>Thu, 02 Mar 2017 19:13:53 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/continuous-integration.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/continuous-integration.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>https://andrewjakubowicz.me/tags/go.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/go.html</link>
       <pubDate>Fri, 24 Feb 2017 17:20:27 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/go.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/go.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Graphics</title>
-      <link>https://andrewjakubowicz.me/tags/graphics.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/graphics.html</link>
       <pubDate>Mon, 27 Feb 2017 21:30:47 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/graphics.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/graphics.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascipt</title>
-      <link>https://andrewjakubowicz.me/tags/javascipt.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/javascipt.html</link>
       <pubDate>Mon, 27 Feb 2017 21:30:47 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/javascipt.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/javascipt.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>https://andrewjakubowicz.me/tags/javascript.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/javascript.html</link>
       <pubDate>Thu, 02 Mar 2017 19:13:53 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/javascript.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/javascript.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mocha</title>
-      <link>https://andrewjakubowicz.me/tags/mocha.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/mocha.html</link>
       <pubDate>Thu, 23 Feb 2017 11:40:25 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/mocha.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/mocha.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Productivity</title>
-      <link>https://andrewjakubowicz.me/tags/productivity.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/productivity.html</link>
       <pubDate>Thu, 02 Mar 2017 19:13:53 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/productivity.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/productivity.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tdd</title>
-      <link>https://andrewjakubowicz.me/tags/tdd.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/tdd.html</link>
       <pubDate>Thu, 23 Feb 2017 11:40:25 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/tdd.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/tdd.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Typescript</title>
-      <link>https://andrewjakubowicz.me/tags/typescript.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/typescript.html</link>
       <pubDate>Fri, 24 Feb 2017 17:20:27 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/typescript.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/typescript.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Visualisation</title>
-      <link>https://andrewjakubowicz.me/tags/visualisation.html</link>
+      <link>https://andrewjakubowicz.github.io/tags/visualisation.html</link>
       <pubDate>Tue, 07 Mar 2017 17:20:34 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/tags/visualisation.html</guid>
+      <guid>https://andrewjakubowicz.github.io/tags/visualisation.html</guid>
       <description></description>
     </item>
     

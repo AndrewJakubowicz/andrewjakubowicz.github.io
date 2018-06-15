@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Contacts on Andrew Jakubowicz</title>
-    <link>https://andrewjakubowicz.me/contact.html</link>
+    <link>https://andrewjakubowicz.github.io/contact.html</link>
     <description>Recent content in Contacts on Andrew Jakubowicz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Feb 2017 11:16:39 +1100</lastBuildDate>
     
-	<atom:link href="https://andrewjakubowicz.me/contact/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andrewjakubowicz.github.io/contact/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Contact</title>
-      <link>https://andrewjakubowicz.me/contact/contact.html</link>
+      <link>https://andrewjakubowicz.github.io/contact/contact.html</link>
       <pubDate>Wed, 15 Feb 2017 11:16:39 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/contact/contact.html</guid>
+      <guid>https://andrewjakubowicz.github.io/contact/contact.html</guid>
       <description>Hi, it would be a pleasure to speak to you. Tweet Me Medium Github Linkedin Email me spyr1014 at gmail dot com</description>
     </item>
     

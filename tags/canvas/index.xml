@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Canvas on Andrew Jakubowicz</title>
-    <link>https://andrewjakubowicz.me/tags/canvas.html</link>
+    <link>https://andrewjakubowicz.github.io/tags/canvas.html</link>
     <description>Recent content in Canvas on Andrew Jakubowicz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Mar 2017 17:20:34 +1100</lastBuildDate>
     
-	<atom:link href="https://andrewjakubowicz.me/tags/canvas/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andrewjakubowicz.github.io/tags/canvas/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A* algorithm</title>
-      <link>https://andrewjakubowicz.me/post/astar.html</link>
+      <link>https://andrewjakubowicz.github.io/post/astar.html</link>
       <pubDate>Tue, 07 Mar 2017 17:20:34 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/post/astar.html</guid>
+      <guid>https://andrewjakubowicz.github.io/post/astar.html</guid>
       <description>Run A*
 Instructions Click and drag on everything!
 Click on a wall to destroy it (and drag around to destroy multiple walls). Clicking on an empty space allows you to rebuild walls (again dragging builds lots of walls)!
@@ -26,10 +26,10 @@ What is the A star algorithm? The A* algorithm is a path finding algorithm that 
     
     <item>
       <title>Intro to Canvas with Particles</title>
-      <link>https://andrewjakubowicz.me/post/simple_particles_canvas.html</link>
+      <link>https://andrewjakubowicz.github.io/post/simple_particles_canvas.html</link>
       <pubDate>Mon, 27 Feb 2017 21:30:47 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/post/simple_particles_canvas.html</guid>
+      <guid>https://andrewjakubowicz.github.io/post/simple_particles_canvas.html</guid>
       <description>This is what we’ll be making!
  If you can’t see anything then your device doesn’t support canvas. You can still follow along, but it’ll be more fun if you can see your work.
 Canvas is a super fun way to create animations on the browser! It’s also very easy to get started.

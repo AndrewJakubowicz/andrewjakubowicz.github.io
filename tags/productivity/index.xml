@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Productivity on Andrew Jakubowicz</title>
-    <link>https://andrewjakubowicz.me/tags/productivity.html</link>
+    <link>https://andrewjakubowicz.github.io/tags/productivity.html</link>
     <description>Recent content in Productivity on Andrew Jakubowicz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Mar 2017 19:13:53 +1100</lastBuildDate>
     
-	<atom:link href="https://andrewjakubowicz.me/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andrewjakubowicz.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Your Front End Checklist</title>
-      <link>https://andrewjakubowicz.me/post/javascriptchecklist.html</link>
+      <link>https://andrewjakubowicz.github.io/post/javascriptchecklist.html</link>
       <pubDate>Thu, 02 Mar 2017 19:13:53 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/post/javascriptchecklist.html</guid>
+      <guid>https://andrewjakubowicz.github.io/post/javascriptchecklist.html</guid>
       <description>This is my ongoing checklist for a good Front-End dev environment. Please tweet me with any tools I&amp;rsquo;ve missed.
 It originated from the Pluralsight course “Building a JavaScript Development Environment” by Cory House. I use this as a refresher, and strongly recommend you check out the full course if you want a much deeper understanding.
 The JavaScript ecosystem moves fast, so the categories are more important than the tools.</description>

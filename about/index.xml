@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on Andrew Jakubowicz</title>
-    <link>https://andrewjakubowicz.me/about.html</link>
+    <link>https://andrewjakubowicz.github.io/about.html</link>
     <description>Recent content in Abouts on Andrew Jakubowicz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Feb 2017 11:16:39 +1100</lastBuildDate>
     
-	<atom:link href="https://andrewjakubowicz.me/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andrewjakubowicz.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://andrewjakubowicz.me/about/about.html</link>
+      <link>https://andrewjakubowicz.github.io/about/about.html</link>
       <pubDate>Wed, 15 Feb 2017 11:16:39 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/about/about.html</guid>
+      <guid>https://andrewjakubowicz.github.io/about/about.html</guid>
       <description>Summary I am a software engineering student / web developer / open source lover from Melbourne, Australia.
 Loves  Javascript and the web Functional Programming Go Distributed Computing Learning  Projects Typescript Dependency Explorer A prototype/exploration into a novel UI for navigating dependencies in TypeScript projects.
 

@@ -3,165 +3,165 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://andrewjakubowicz.me/post/astar.html</loc>
+    <loc>https://andrewjakubowicz.github.io/post/astar.html</loc>
     <lastmod>2017-03-07T17:20:34+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/post/javascriptchecklist.html</loc>
+    <loc>https://andrewjakubowicz.github.io/post/javascriptchecklist.html</loc>
     <lastmod>2017-03-02T19:13:53+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/post/simple_particles_canvas.html</loc>
+    <loc>https://andrewjakubowicz.github.io/post/simple_particles_canvas.html</loc>
     <lastmod>2017-02-27T21:30:47+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/post/postmortem-tsdepdraw.html</loc>
+    <loc>https://andrewjakubowicz.github.io/post/postmortem-tsdepdraw.html</loc>
     <lastmod>2017-02-24T17:20:27+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/post/novicetest.html</loc>
+    <loc>https://andrewjakubowicz.github.io/post/novicetest.html</loc>
     <lastmod>2017-02-23T11:40:25+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/post/nqueens.html</loc>
+    <loc>https://andrewjakubowicz.github.io/post/nqueens.html</loc>
     <lastmod>2017-02-22T17:20:27+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/about/about.html</loc>
+    <loc>https://andrewjakubowicz.github.io/about/about.html</loc>
     <lastmod>2017-02-15T11:16:39+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/contact/contact.html</loc>
+    <loc>https://andrewjakubowicz.github.io/contact/contact.html</loc>
     <lastmod>2017-02-15T11:16:39+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/about.html</loc>
+    <loc>https://andrewjakubowicz.github.io/about.html</loc>
     <lastmod>2017-02-15T11:16:39+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/algorithm.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/algorithm.html</loc>
     <lastmod>2017-03-07T17:20:34+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/</loc>
+    <loc>https://andrewjakubowicz.github.io/</loc>
     <lastmod>2017-03-07T17:20:34+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/canvas.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/canvas.html</loc>
     <lastmod>2017-03-07T17:20:34+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/categories.html</loc>
+    <loc>https://andrewjakubowicz.github.io/categories.html</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/contact.html</loc>
+    <loc>https://andrewjakubowicz.github.io/contact.html</loc>
     <lastmod>2017-02-15T11:16:39+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/continuous-integration.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/continuous-integration.html</loc>
     <lastmod>2017-03-02T19:13:53+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/categories/demo.html</loc>
+    <loc>https://andrewjakubowicz.github.io/categories/demo.html</loc>
     <lastmod>2017-03-07T17:20:34+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/go.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/go.html</loc>
     <lastmod>2017-02-24T17:20:27+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/graphics.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/graphics.html</loc>
     <lastmod>2017-02-27T21:30:47+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/javascipt.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/javascipt.html</loc>
     <lastmod>2017-02-27T21:30:47+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/javascript.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/javascript.html</loc>
     <lastmod>2017-03-02T19:13:53+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/mocha.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/mocha.html</loc>
     <lastmod>2017-02-23T11:40:25+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/post.html</loc>
+    <loc>https://andrewjakubowicz.github.io/post.html</loc>
     <lastmod>2017-03-07T17:20:34+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/productivity.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/productivity.html</loc>
     <lastmod>2017-03-02T19:13:53+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/series.html</loc>
+    <loc>https://andrewjakubowicz.github.io/series.html</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags.html</loc>
     <lastmod>2017-03-07T17:20:34+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/tdd.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/tdd.html</loc>
     <lastmod>2017-02-23T11:40:25+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/categories/tutorial.html</loc>
+    <loc>https://andrewjakubowicz.github.io/categories/tutorial.html</loc>
     <lastmod>2017-02-27T21:30:47+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/typescript.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/typescript.html</loc>
     <lastmod>2017-02-24T17:20:27+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://andrewjakubowicz.me/tags/visualisation.html</loc>
+    <loc>https://andrewjakubowicz.github.io/tags/visualisation.html</loc>
     <lastmod>2017-03-07T17:20:34+11:00</lastmod>
     <priority>0</priority>
   </url>

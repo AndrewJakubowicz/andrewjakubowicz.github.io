@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Andrew Jakubowicz</title>
-    <link>https://andrewjakubowicz.me/categories.html</link>
+    <link>https://andrewjakubowicz.github.io/categories.html</link>
     <description>Recent content in Categories on Andrew Jakubowicz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://andrewjakubowicz.me/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andrewjakubowicz.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Demo</title>
-      <link>https://andrewjakubowicz.me/categories/demo.html</link>
+      <link>https://andrewjakubowicz.github.io/categories/demo.html</link>
       <pubDate>Tue, 07 Mar 2017 17:20:34 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/categories/demo.html</guid>
+      <guid>https://andrewjakubowicz.github.io/categories/demo.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorial</title>
-      <link>https://andrewjakubowicz.me/categories/tutorial.html</link>
+      <link>https://andrewjakubowicz.github.io/categories/tutorial.html</link>
       <pubDate>Mon, 27 Feb 2017 21:30:47 +1100</pubDate>
       
-      <guid>https://andrewjakubowicz.me/categories/tutorial.html</guid>
+      <guid>https://andrewjakubowicz.github.io/categories/tutorial.html</guid>
       <description></description>
     </item>
     
